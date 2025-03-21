@@ -30,7 +30,7 @@ from bacpypes.consolecmd import ConsoleCmd
 from bacpypes.core import run
 from bacpypes.task import RecurringTask
 
-from bacpypes.primitivedata import Null, Real, Date, Time, Integer, Unsigned8, Unsigned, Enumerated,Boolean
+from bacpypes.primitivedata import Null, Real, Date, Time, Integer, Unsigned8, Unsigned, Enumerated,Boolean,BitString
 from bacpypes.constructeddata import ArrayOf, ListOf
 from bacpypes.basetypes import (
     CalendarEntry,
@@ -144,7 +144,7 @@ def main():
         objectIdentifier=("analogValue", 1),
         objectName="av",
         presentValue=0.0,
-        statusFlags=[0, 0, 0, 0],
+        statusFlags=[0],
         covIncrement=1.0,
         deadband=3.0,
         lowLimit=6.0,
@@ -160,7 +160,7 @@ def main():
         objectIdentifier=("multiStateValue", 1),
         objectName="msv",
         presentValue=Unsigned(4),
-        statusFlags=[0, 0, 0, 0],
+        statusFlags=[0],
         outOfService=Boolean(True),
         numberOfStates=Unsigned(1),
     )
@@ -176,7 +176,7 @@ def main():
         objectIdentifier=("integerValue", 1),
         objectName="iv",
         presentValue=Integer(7),
-        statusFlags=[0, 0, 0, 0],
+        statusFlags=[0],
         outOfService=Boolean(False),
         minPresValue=Integer(2),
     )
@@ -192,7 +192,7 @@ def main():
         objectIdentifier=("binaryValue", 1),
         objectName="bv",
         presentValue="inactive",
-        statusFlags=[0, 0, 0, 0],
+        statusFlags=[0],
         outOfService=Boolean(False)
     )
     _log.debug("    - test_bv: %r", test_bv)
